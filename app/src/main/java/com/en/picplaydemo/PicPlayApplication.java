@@ -11,6 +11,7 @@ public class PicPlayApplication extends Application {
     @Override
     public void onCreate() {
         Fresco.initialize(getApplicationContext());
+
         super.onCreate();
 
     }
