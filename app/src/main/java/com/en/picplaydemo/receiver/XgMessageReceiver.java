@@ -2,6 +2,7 @@ package com.en.picplaydemo.receiver;
 
 import android.content.Context;
 
+import com.en.picplaydemo.bussiness.JSONUtils;
 import com.tencent.android.tpush.XGPushBaseReceiver;
 import com.tencent.android.tpush.XGPushClickedResult;
 import com.tencent.android.tpush.XGPushRegisterResult;
@@ -72,6 +73,11 @@ public class XgMessageReceiver extends XGPushBaseReceiver {
     @Override
     public void onTextMessage(Context context, XGPushTextMessage message) {
         System.out.println("onTextMessage");
+
+        if (message.getContent().indexOf("updateAdvertise")!=-1){
+
+            JSONUtils.parseupdateListURL();
+        }
     }
 
 }

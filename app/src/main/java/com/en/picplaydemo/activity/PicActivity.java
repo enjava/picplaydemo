@@ -38,13 +38,16 @@ public class PicActivity extends Activity {
         setContentView(R.layout.activity_pic);
         mSimpleDraweeView = (SimpleDraweeView) findViewById(R.id.picPlayView);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
-        list = JSONUtils.getAdvertiseList();
+        getList();
         //启动播放线程
 
-        setThread();
+        //setThread();
         initUI();
     }
 
+    private void getList(){
+        list = JSONUtils.getAdvertiseList();
+    }
     //写一个监听器 监听图片加载
     ControllerListener listener = new BaseControllerListener() {
 
@@ -101,16 +104,24 @@ public class PicActivity extends Activity {
         if (getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
+        setStop(false);
+        if( JSONUtils.isStop) {
+            System.out.println("bbbbbbbbb");
+            setThread();
+        }
         super.onResume();
+        System.out.println("aaaaaaaaaaa");
     }
 
     public void setThread() {
         new Thread() {
             public void run() {
+                JSONUtils.isStop=false;
                 try {
                     while (!isStop) {
                         if (list != null)
-                            for (int k = 0; k < list.size(); k++) {
+                            for (int k=0 ;k < list.size();k++) {
+
                                 if (isStop)
                                     break;
                                 Message msg = Message.obtain();
@@ -118,10 +129,16 @@ public class PicActivity extends Activity {
                                 msg.what = k;
                                 mHandler.sendMessage(msg);
                                 Thread.sleep(time * 1000);
+                                if(JSONUtils.updateAdvertise) {
+                                    getList();
+                                    JSONUtils.updateAdvertise=false;
+                                }
+
                             }
                     }
                 } catch (Exception e) {
                 }
+                JSONUtils.isStop=true;
             }
         }.start();
 
@@ -152,4 +169,22 @@ public class PicActivity extends Activity {
             initUI();
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        setStop (true);
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        setStop (true);
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        setStop (true);
+        super.onStop();
+    }
 }

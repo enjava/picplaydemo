@@ -19,6 +19,9 @@ public class JSONUtils {
 
     // {"id": 2,"url": "菠萝","time": 29.11,"timeRange": 29.11,"area": "菠萝"},
     // {"id": 3,"url": "苹果","time": 16.24,"timeRange": 29.11,"area": "菠萝"}]}
+    public static boolean updateAdvertise=false;//是否有新的数据需要更新
+    public static boolean isStop=true;
+    public static int k=0;
     public  static List<Advertise> jsonList(){
 
       List<Advertise> listjson=  new ArrayList<Advertise>();
@@ -76,6 +79,20 @@ public class JSONUtils {
         new Thread() {
             public void run() {
                 advertiseList= JSONUtils.jsonList();
+                for (Advertise advertise:advertiseList) {
+                    System.out.println(advertise.toString());
+                }
+            }
+        }.start();
+
+    }
+
+    public static void parseupdateListURL()
+    {
+        new Thread() {
+            public void run() {
+                advertiseList= JSONUtils.jsonList();
+                updateAdvertise=true;
                 for (Advertise advertise:advertiseList) {
                     System.out.println(advertise.toString());
                 }

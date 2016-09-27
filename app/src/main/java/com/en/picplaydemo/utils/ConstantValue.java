@@ -5,7 +5,7 @@ public class ConstantValue {
 	 * 是否开启更新的key
 	 */
 	public static final String OPEN_UPDATE = "open_update";
-	
+	//public static final boolean
 	/**
 	 * 是否设置密码key
 	 */
