@@ -2,6 +2,7 @@ package com.en.picplaydemo.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,14 @@ public class MainActivity extends Activity {
     public void play(View view){
 
       startActivity(new Intent(this,PicActivity.class));
+    }
+
+    @Override
+    protected void onResume() {
+        if (getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
+        super.onResume();
     }
 
     class Madapter extends BaseAdapter {
