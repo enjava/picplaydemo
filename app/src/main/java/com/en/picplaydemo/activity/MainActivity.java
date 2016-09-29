@@ -17,6 +17,8 @@ import com.en.picplaydemo.R;
 import com.en.picplaydemo.bussiness.JSONUtils;
 import com.en.picplaydemo.utils.XGUtil;
 
+import java.lang.reflect.Method;
+
 public class MainActivity extends Activity {
     private GridView gv_home;
     //private List<Advertise> list;
@@ -96,6 +98,40 @@ public class MainActivity extends Activity {
             tv_price.setText(mprice[position]);
             iv_icon.setBackgroundResource(mImageID[position]);
             return view;
+        }
+    }
+
+    //关闭下拉
+    @ Override
+    public void onWindowFocusChanged(boolean hasFocus)
+    {
+//        // TODO Auto-generated method stub
+//        System.out.println("hasfocus--->>>" + hasFocus);
+//        super.onWindowFocusChanged(hasFocus);
+//        try
+//        {
+//            Object service = getSystemService("statusbar");
+//            Class<?> statusbarManager =
+//                    Class.forName("android.app.StatusBarManager");
+//            Method test = statusbarManager.getMethod("collapse");
+//            test.invoke(service);
+//        }
+//        catch (Exception ex)
+//        {
+//            ex.printStackTrace();
+//        }
+
+        // TODO Auto-generated method stub
+        super.onWindowFocusChanged(hasFocus);
+        try {
+
+
+            Object service = getSystemService("statusbar");
+            Class<?> statusbarManager = Class.forName("android.app.StatusBarManager");
+            Method test = statusbarManager.getMethod("collapse");
+            test.invoke(service);
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 }

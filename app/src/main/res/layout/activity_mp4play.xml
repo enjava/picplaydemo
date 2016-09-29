@@ -3,9 +3,29 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <!--<LinearLayout-->
+        <!--android:id="@+id/ll1"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<ImageView android:id="@+id/img"-->
+            <!--android:src="@mipmap/logo"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:layout_width="51dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_centerVertical="true"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="编号201609281611"-->
+            <!--android:background="#FFFFFF"/>-->
+    <!--</LinearLayout>-->
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_below="@+id/ll1"
     android:onClick="stopPlay">
     <VideoView android:id="@+id/mp4"
         android:layout_width="match_parent"
