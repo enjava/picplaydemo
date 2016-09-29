@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/home_bg"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView android:id="@+id/img"
+            android:src="@mipmap/logo"
+            android:scaleType="centerInside"
+            android:layout_width="51dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="编号201609281611"
+            android:background="#FFFFFF"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="60dp"
+        android:layout_below="@id/ll1"
+        android:orientation="horizontal">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    android:background="#e0ffffff"
+    android:layout_weight="1">
+        <ImageView
+            android:layout_width="match_parent"
+android:id="@+id/product_id"
+
+            android:layout_height="match_parent"
+            android:src="@mipmap/kekoukele"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="25dp"
+        android:orientation="vertical"
+        android:background="#e0ffffff"
+        android:layout_weight="1">
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/tv_name"
+          android:text="名称:可口可乐330ml"
+          android:textStyle="bold"
+          android:textSize="12dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_price"
+            android:text="价格:2.5元"
+            android:textStyle="bold"
+            android:textSize="12dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="25dp"
+        android:background="#e0ffffff"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/zhifu_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/xianjin01"/>
+    </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+
+            android:layout_height="30dp"
+
+            android:background="#FFFFFF"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/textView" />
+
+
+        <ImageView
+            android:id="@+id/xianjin"
+            android:src="@mipmap/xianjin"
+            android:layout_width="58dip"
+            android:layout_height="30dip"
+            android:onClick="xianjin"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/zhifubaozhifu"
+            android:layout_alignEnd="@+id/zhifubaozhifu"
+            android:layout_marginRight="78dp"
+            android:layout_marginEnd="78dp" />
+
+        <ImageView
+            android:id="@+id/zhifubaozhifu"
+            android:src="@mipmap/zhifubaozhifu"
+            android:layout_width="58dip"
+            android:layout_height="30dip"
+            android:onClick="zhifubo"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/bangzhu"
+            android:src="@mipmap/weixinzhifu"
+            android:layout_width="58dip"
+            android:layout_height="30dip"
+            android:layout_marginLeft="18dp"
+            android:onClick="weixin"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/zhifubaozhifu"
+            android:layout_toEndOf="@id/zhifubaozhifu" />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_height="36dp"
+        android:onClick="reback"
+        android:text="返回"
+
+        />
+
+</RelativeLayout>

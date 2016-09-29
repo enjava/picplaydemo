@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -41,11 +42,21 @@ public class MainActivity extends Activity {
     private void initUI() {
         gv_home = (GridView) findViewById(R.id.gv);
         gv_home.setAdapter(new Madapter());
+
+        gv_home.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent();
+                intent.putExtra("position", position);
+                intent.setClass(getApplicationContext(), PaymentActivity.class);
+                startActivity(intent);
+               }
+        });
     }
 
     public void play(View view){
 
-      startActivity(new Intent(this,PicActivity.class));
+      startActivity(new Intent(this,Mp4PlayActivity.class));
     }
 
     @Override

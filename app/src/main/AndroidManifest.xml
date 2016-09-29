@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.PicActivity"/>
+        <activity android:name=".activity.PaymentActivity"/>
+        <activity android:name=".activity.Mp4PlayActivity"/>
+
         <!-- 【必须】 (2.30及以上版新增)展示通知的activity -->
         <activity
             android:name="com.tencent.android.tpush.XGPushActivity"
@@ -27,6 +30,7 @@
                 <action android:name="android.intent.action" />
             </intent-filter>
         </activity>
+
 
         <!-- 【必须】 信鸽receiver广播接收 -->
         <receiver
