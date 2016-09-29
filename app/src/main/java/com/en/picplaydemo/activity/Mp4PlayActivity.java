@@ -45,14 +45,6 @@ public class Mp4PlayActivity extends Activity {
                 mVideoView.start();
             }
         });
-
-        mVideoView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mVideoView.pause();
-                finish();
-            }
-        });
     }
 
     @Override

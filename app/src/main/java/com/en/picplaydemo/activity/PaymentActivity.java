@@ -21,7 +21,7 @@ public class PaymentActivity extends Activity {
             "脉动","美年达", "启力","雀巢咖啡","统一冰红茶","统一绿茶","统一奶茶","怡宝纯净水","营养快线" };
     private String [] mprice=new String[]{"2.5元","2.5元","2.5元","5.5元","3元",
             "4元","2.5元","2.5元","3.5元","3元","2.5元","3元","2元","3.5元"};
-    private int[] mImageID=new int[]{R.mipmap.bskl,R.mipmap.kekoukele,R.mipmap.fenda,R.mipmap.hongniu,R.mipmap.jiaduobao,R.mipmap.maidong,R.mipmap.meinianda,
+    private int[] mImageID = new int[]{R.mipmap.bskl,R.mipmap.kekoukele,R.mipmap.fenda,R.mipmap.hongniu,R.mipmap.jiaduobao,R.mipmap.maidong,R.mipmap.meinianda,
             R.mipmap.qili,R.mipmap.quechaokafei,R.mipmap.tongyibinghongcha,R.mipmap.tylvcha,R.mipmap.tynaicha,R.mipmap.yibaochunjingshui,R.mipmap.yingyangkuaixian};
     private ImageView productID;
     private TextView mproductprice;
