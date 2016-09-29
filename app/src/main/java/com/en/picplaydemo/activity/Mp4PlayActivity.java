@@ -19,7 +19,7 @@ public class Mp4PlayActivity extends Activity {
 
     private VideoView mVideoView;
     private int[] mMp4 = new int[]{R.raw.a, R.raw.b, R.raw.c, R.raw.d};
-    int position =(int)Math.random()*4;
+    int position =(int)(Math.random()*4);
     /**
      * Called when the activity is first created.
      */

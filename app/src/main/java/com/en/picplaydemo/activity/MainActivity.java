@@ -95,8 +95,6 @@ public class MainActivity extends Activity {
             tv_name.setText(mitemname[position]);
             tv_price.setText(mprice[position]);
             iv_icon.setBackgroundResource(mImageID[position]);
-
-
             return view;
         }
     }
